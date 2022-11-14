@@ -2,6 +2,8 @@ from random import randint
 
 def get_unique_list_numbers(start = -10, stop = 10, count = 15) -> list[int]:
     list_ = []
+    if stop - start < count:
+        raise ValueError("Размер списка превышает диапазон!")
     while len(list_) < count:
         new_number = randint(start, stop)
         if new_number not in list_:
